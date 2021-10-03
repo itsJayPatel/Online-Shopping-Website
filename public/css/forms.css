@@ -1,0 +1,25 @@
+.form-item {
+  margin: 1rem 0;
+}
+
+.form-item label,
+.form-item input,
+.form-item textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.form-item input,
+.form-item textarea {
+  border: 1px solid #817e99;
+  font: inherit;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.form-item input:focus,
+.form-item textarea:focus {
+  outline: none;
+  border: 2px solid #6f699e;
+}

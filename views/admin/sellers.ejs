@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (sellers.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul>
+                    <% sellers.forEach(seller => { %>
+                        <li>
+                            <ul>
+                                    <li>Seller Id: <%= seller.id %></li>
+                                    <li>Seller Email: <%= seller.email %></li>
+                            </ul>
+                        </li><hr>
+                    <% }); %>
+                </ul>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>

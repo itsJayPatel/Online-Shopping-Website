@@ -1,0 +1,34 @@
+.cart-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  width: 60rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid grey;
+  background-color: #f7f7ff;
+  margin: 1.5rem;
+}
+
+.cart-item h1 {
+  width: 70%;
+  color: #070758;
+}
+
+.cart-item h1,
+.cart-item h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  display: inline;
+}
+
+.cart-item h2 {
+  margin-right: 0.75rem;
+  color: #ea1313;
+}

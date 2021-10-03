@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  padding: 0.5rem;
+}
+
+form {
+  display: inline;
+}
+
+.centered {
+  text-align: center;
+}
+
+.image {
+  height: 20rem;
+}
+
+.image img {
+  height: 100%;
+}
+
+.product-detail-container{
+  border: 1px solid blue;
+  margin: auto;
+  width: 60%;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.header-root {
+  width: 100%;
+  height: 3.5rem;
+  background-color: #2874f0;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-root { 
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-group-item {
+  margin: 0 1rem;
+  padding: 0;
+}
+
+.nav-group-item a,
+.nav-group-item button {
+  font: inherit;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-group-item a:hover,
+.nav-group-item a.active,
+.nav-group-item button:hover {
+  color: #0c0c81;
+  font-weight: bold;
+}
+
+.flash-error {
+  margin: auto;
+  width: 90%;
+  border: 1px solid red;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background: #ffd5d5;
+  text-align: center;
+  color: red;
+}
+
+.input-error{
+  color: red;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  border: 1px solid grey;
+  background-color: #f4f4ff;
+  width: 20rem;
+  margin: 2.5rem 1rem;
+  border-radius: 8px;
+}
+
+.card-title{
+  height: 7.5rem;
+}
+
+.card-title,
+.card-price {
+  padding: 1rem;
+}
+
+.card-title h1,
+.card-price h2 {
+  margin: 0;
+}
+
+.card-image {
+  /* width: 100%; */
+  height: 18rem;
+}
+
+.card-image img {
+  width: 88%;
+  height: 85%;
+  display: block;
+  margin: auto;
+}
+
+.card-buttons {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-buttons button,
+.card-buttons a {
+  margin: 0 0.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  font: inherit;
+  border: 1px solid #2874f0;
+  color: #2874f0;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #2874f0;
+  color: white;
+}
+
+.btn.danger {
+  color: red;
+  border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: red;
+  color: white;
+}

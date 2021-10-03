@@ -1,0 +1,14 @@
+.product-form {
+    width: 32rem;
+    margin: auto;
+    display: block;
+}
+
+.product-title {
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.product-price {
+    text-align: center;
+}

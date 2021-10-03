@@ -1,0 +1,72 @@
+<header class="header-root">
+    
+    <nav class="nav-root">
+        
+        <ul class="nav-group">
+            <li class="nav-group-item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
+            </li>
+            
+            <% if (!isAuthenticated) { %>
+                <li class="nav-group-item">
+                    <a class="<%= path === '/user-login' ? 'active' : '' %>" href="/user-login">User Login</a>
+                </li>
+                <li class="nav-group-item">
+                    <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">User Signup</a>
+                </li>
+                <li class="nav-group-item">
+                    <a class="<%= path === '/seller-login' ? 'active' : '' %>" href="/seller-login">Seller Login</a>
+                </li>
+            <% } %>
+            
+            <% if (isAuthenticated && (isAdmin)) { %>
+                <li class="nav-group-item">
+                    <a class="<%= path === '/admin/sellers' ? 'active' : '' %>" href="/admin/sellers">Sellers</a>
+                </li>
+                <li class="nav-group-item">
+                    <a class="<%= path === '/admin/all-orders' ? 'active' : '' %>" href="/admin/all-orders">All Orders</a>
+                </li>
+            <% } %>
+            <% if (isAuthenticated && (!isSeller) && (!isAdmin)) { %>
+            <li class="nav-group-item">
+                <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
+            </li>
+            <li class="nav-group-item">
+                <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders">Orders</a>
+            </li>
+            <% } %>
+            <% if (isAuthenticated && isSeller) { %>
+            <li class="nav-group-item">
+                <a class="<%= path === '/seller/add-product' ? 'active' : '' %>" href="/seller/add-product">Add Product
+                </a>
+            </li>
+            <li class="nav-group-item">
+                <a class="<%= path === '/seller/products' ? 'active' : '' %>" href="/seller/products">Seller Products
+                </a>
+            </li>
+            <li class="nav-group-item">
+                <a class="<%= path === '/seller/view-orders' ? 'active' : '' %>" href="/seller/view-orders">View Orders
+                </a>
+            </li>
+            <% } %>
+        </ul>
+        <ul class="nav-group">
+            <% if (!isAuthenticated) { %>
+            
+            <li class="nav-group-item">
+                <a class="<%= path === '/seller-register' ? 'active' : '' %>" href="/seller-register">Become a Seller</a>
+            </li>
+            <li class="nav-group-item">
+                <a class="<%= path === '/admin-login' ? 'active' : '' %>" href="/admin-login">Admin Login</a>
+            </li>
+            <% } else { %>
+            <li class="nav-group-item">
+                <form action="/logout" method="post">
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+            <% } %>
+        </ul>
+    
+    </nav>
+</header>

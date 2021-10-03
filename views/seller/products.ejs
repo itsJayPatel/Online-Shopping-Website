@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (prods.length > 0) { %>
+                    <div class="container">
+                        <% for (let product of prods) { %>
+                            <article class="card">
+                                <header class="card-title">
+                                    <h1 class="product-title">
+                                        <%= product.title %>
+                                    </h1>
+                                </header>
+                                <div class="card-image">
+                                    <img src="../../Images/<%= product.imageUrl %>" alt="<%= product.title %>">
+                                </div>
+                                <div class="card-price">
+                                    <h2 class="product-price">Rs.
+                                        <%= product.price %>
+                                    </h2>
+                                    
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/products/<%= product.id %>" class="btn">Details</a><br><br>
+                                    <a href="/seller/edit-product/<%= product.id %>?edit=true" class="btn">Edit</a>
+                                    <form action="/seller/delete-product" method="POST">
+                                        <input type="hidden" value="<%= product.id %>" name="productId">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Products Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

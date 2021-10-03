@@ -1,0 +1,66 @@
+<!-- <%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        
+        <main>
+            <% if (orders.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul>
+                    <% orders.forEach(order => { %>
+                        
+                        <li class="order-list-item">
+                            <h3>Order Id: <%= order.orderId %></h3>
+                            <ul>
+                                    
+                                    <li>Product Id: <%= order.productId %></li>
+                                    <li>Quantity: <%= order.quantity %></li>
+                                    <li>User Id: <%= order.userId %></li>
+                                    <li>mobile: <%= order.mobile %></li>
+                                    <li>Placed on: <%= order.updatedAt %></li>
+                            </ul>
+                        </li>
+                        <hr>
+                    <% }); %>
+                </ul>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %> -->
+
+        <%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (orders.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul>
+                    <% orders.forEach(order => { 
+                        if(order.products.length > 0) { %>
+                        <li>
+                            <h3>Order Id: <%= order.id %></h3>
+                            <h3>User Id: <%= order.userId %></h3>
+                            <h3>Placed On: <%= order.updatedAt %></h3>
+                            <ul>
+                                <!-- <% order.products.forEach(product => { console.log(product, "...\n\n\n\n...", product.orderItem, "...\n\n\n\n...") %> -->
+                                <!-- <% order.products.forEach(product => { console.log(product, "...\n\n\n\n...", product.orderItem, "...\n\n\n\n...", user, "...\n\n\n...") %> -->
+                                <% order.products.forEach(product => { %>
+                                    <hr width="50%" align="left" size="1px">
+                                    <li><b>Product Title: <%= product.title %></b></li>
+                                    <li>Product Id: <%= product.id %></li>
+                                    <li>Quantity: <%= product.orderItem.quantity %></li>
+                                    <li>Product Price: product.price</li>
+                                    
+                                <% }); %>
+                            </ul>
+                        </li><hr size="6px" color="blue">
+                    <% }
+                    }); %>
+                </ul>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>

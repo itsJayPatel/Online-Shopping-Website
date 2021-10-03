@@ -1,0 +1,61 @@
+<!-- <%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (orders.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul>
+                    <% orders.forEach(order => { %>
+                            <ul>
+                                <li>Product Id: <%= order.P_ID %></li>
+                                <li>Quantity: <%= order.quantity %></li>
+                                <li>Product Title: <%= order.title %></li>
+                                <li>Order Id: <%= order.orderId %></li>
+                                <li>Placed At: <%= order.updatedAt %></li>
+                                <li>User Id: <%= order.userId %></li>
+                                <li>Mobile: <%= order.mobile %></li>
+                            </ul>
+                            <hr>
+                    <% }); %>
+                </ul>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %> -->
+
+        <%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (orders.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul>
+                    <% orders.forEach(order => { 
+                        if(order.products.length > 0) { %>
+                        <li>
+                            <h3>Order Id: <%= order.id %></h3>
+                            <h3>User Id: <%= order.userId %></h3>
+                            <h3>User Mobile: <%= order.user.mobile %></h3>
+                            <h3>Placed On: <%= order.updatedAt %></h3>
+                            <ul>
+                                <% order.products.forEach(product => { %>
+                                    <hr width="50%" align="left" size="1px">
+                                    <li><b>Product Title: <%= product.title %></b></li>
+                                    <li>Product Id: <%= product.id %></li>
+                                    <li>Quantity: <%= product.orderItem.quantity %></li>
+                                    <li>Product Price:<%= product.price %></li>
+                                    
+                                <% }); %>
+                            </ul>
+                        </li><hr size="6px" color="blue">
+                    <% }
+                    }); %>
+                </ul>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>
